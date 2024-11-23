@@ -1,6 +1,4 @@
 
-.. Quarto Project documentation master file
-
 Welcome to the Quarto Project documentation!
 ============================================
 
