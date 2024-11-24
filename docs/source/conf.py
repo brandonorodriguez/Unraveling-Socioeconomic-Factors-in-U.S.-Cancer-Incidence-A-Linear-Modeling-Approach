@@ -11,7 +11,7 @@ extensions = [
     'sphinx_book_theme'
 ]
 templates_path = ['_templates']
-exclude_patterns = []
+exclude_patterns = ['_build','**/.ipynb_checkpoints']
 
 # -- Options for HTML output -------------------------------------------------
 html_theme = 'sphinx_book_theme'
