@@ -1,8 +1,8 @@
----
+
 title: "Unraveling Socioeconomic Factors in the U.S. Cancer Incidence : A Linear Modeling Approach"
 format: pdf
 editor: visual
----
+
 
 # Unraveling Socioeconomic Factors in the U.S. Cancer Incidence : A Linear Modeling Approach
 
