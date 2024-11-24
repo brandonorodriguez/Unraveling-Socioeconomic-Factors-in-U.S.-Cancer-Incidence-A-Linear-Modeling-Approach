@@ -8,7 +8,7 @@ author = 'User'
 
 # -- General configuration ---------------------------------------------------
 extensions = [
-    'sphinx_book_theme'
+    'sphinx_book_theme', 'myst_parser'
 ]
 templates_path = ['_templates']
 exclude_patterns = ['_build','**/.ipynb_checkpoints']

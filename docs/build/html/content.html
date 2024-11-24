@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Unraveling Socioeconomic Factors in the U.S. Cancer Incidence : A Linear Modeling Approach &#8212; Quarto Project  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to the Quarto Project documentation!" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quarto Project  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Unraveling Socioeconomic Factors in the U.S. Cancer Incidence : A Linear Modeling Approach</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/your-username/your-repo" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/content.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unraveling Socioeconomic Factors in the U.S. Cancer Incidence : A Linear Modeling Approach</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-tool-motivations">Modeling Tool Motivations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-tool-assumptions">Modeling Tool Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data Preprocessing</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>title: “Unraveling Socioeconomic Factors in the U.S. Cancer Incidence : A Linear Modeling Approach”
+format: pdf
+editor: visual</p>
+<section id="unraveling-socioeconomic-factors-in-the-u-s-cancer-incidence-a-linear-modeling-approach">
+<h1>Unraveling Socioeconomic Factors in the U.S. Cancer Incidence : A Linear Modeling Approach<a class="headerlink" href="#unraveling-socioeconomic-factors-in-the-u-s-cancer-incidence-a-linear-modeling-approach" title="Link to this heading">#</a></h1>
+<p>Created by Brandon Rodriguez under the advising of Professor Aiden McLoughlin at UC Berkeley.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Cancer is a leading cause of mortality in the United States, and understanding the factors that affect cancer mortality can help the federal government as well as state governments effectively allocate capital and resources in the correct areas. Using data on Cancer mortality and its factors, I hope to answer the research question: what socioeconomic and/or geographic factors most affect cancer mortality rates, and to what extent? Using my dataset, consisting of both yearly values and multi-year averages from cancer.gov, the American Community Survey, and clinicaltrials.gov, the focus of my project was causal inference on variables such as age, gender, race/ethnicity, socioeconomic status, geographic location, and more. Due to the issues of non-normality and linearity found in data exploration, I decided to use modeling tools that did not rely on these assumptions. Additionally, I focused on modeling tools that created a more parsimonious model, focusing on picking out the most impactful variables in exchange for less prediction accuracy.</p>
+<p>The data set used consists of 3047 observations and 34 variables, where a unit of observation is a county in the United States. As mentioned previously, a variable can either be a value collected in a certain year, or an average over a period of years. For example, the dependent variable, “TARGET_deathRate” represents the Mean per capita (100,000) cancer mortalities between the years 2010 and 2016. In contrast, the variable “MedianAge” represents the median age of residents in a certain county coming from the 2013 Census Estimates. Since the aim of the study is causal inference, not prediction accuracy, as well as the difficulty of consistently measuring variables such as “MedianAge,” there does appear to be any significant temporal aspect to the results. The study is also done under the knowledge that the observations are perfectly independent, as state-wide trends can certainly affect specific variables compared to a different state, however this will be addressed by considering state and even region averages in our model. While there are gaps in certain variables due to not being collected in that county, for most variables this is insignificant and randomly placed (geographically) enough to consider the data set generalizable to the entire United States. Additionally, the use of multiple years in our data set will result in the results more robust and generalizable for the decade of 2010-2020, as well as possibly beyond that. Additional data not recorded in the dataset that may have improved the modeling is data on county occupation distributions, as it’s known that certain environmental factors, such as radiation, impact the incidence and thus death rate of cancer.</p>
+</section>
+<section id="modeling-tool-motivations">
+<h2>Modeling Tool Motivations<a class="headerlink" href="#modeling-tool-motivations" title="Link to this heading">#</a></h2>
+<p>Modeling was largely divided into two parts: feature selection and coefficient inference, and the modeling techniques used for each section were Lasso regression and Bootstrap confidence intervals, respectively. For feature selection, initial variables were chosen on the basis of domain knowledge and exploratory data analysis, constituting an initial model. Domain knowledge was also used to pick out a list of possibly important features, and then Lasso regression was used to create a final model. By using Lasso, I was able to effectively choose between a great deal of additional features, as well as eliminate any initial variables that were found to be unimportant. Additionally, by using the lambda value one standard error away from the minimum lambda value, I was able to obtain a far more sparse model than other methods. By using Bootstrap inference, I was able to not only obtain parameter inference without a normality assumption, but also help justify the use of imputation on missing values. By using these modeling techniques, I was able to create an answer to my research question that was focused on the most important features impacting cancer mortality, as well as without using improbable assumptions.</p>
+</section>
+<section id="modeling-tool-assumptions">
+<h2>Modeling Tool Assumptions<a class="headerlink" href="#modeling-tool-assumptions" title="Link to this heading">#</a></h2>
+<p>As mentioned prior, by using Lasso regression and Bootstrap inference, the assumptions I assumed about my model were homoskedasticity, linearity, and no excessive multicollinearity. I also am assuming that my sample is representative of the population.</p>
+</section>
+<section id="data-preprocessing">
+<h2>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h2>
+<p>Unfortunately, the data does contain NA values, which were addressed by exclusion and imputation on certain variables. Since PctSomeCol18_24 (Percent of county residents ages 18-24 highest education attained: some college) has a NA rate of 74.99% I was comfortable excluding it, as it is too sparse to reasonably impute. PctEmployed16_Over (Percent of county residents ages 16 and over unemployed) has only a 4.99% NA rate. PctPublicCoverageAlone (Percent of county residents with government-provided health coverage alone) has a 19.99% NA rate, but seems too important to ignore if we wish to consider the status of coverage as a variable. All other variables do not contain NA values. I thus used MICE (Multiple Imputation by Chained Equations) to replace the NA values of these two variables with very likely substitutions using a method known as predictive mean matching. MICE operates under the assumption that the data missing is MAR (Missing at Random). Due to the data collection process (each row represents a county), the likely possible bias is that certain states refuse or fail to collect these variables in a systematic way, and thus the data is no longer MAR. I checked this assumption towards the end of modeling by considering the finalized model on both the imputed and reduced dataset (rows including NA’s for variables not excluded are removed), and assessed their similarities and differences. Regardless, variable selection will be done using the imputed dataset, assuming MAR, thus imputing 152 PctEmployed16_Over NA values and 609 PctPublicCoverageAlone NA values.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">))</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">usmap</span><span class="p">))</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">scales</span><span class="p">))</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">mice</span><span class="p">))</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">glmnet</span><span class="p">))</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">boot</span><span class="p">))</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">grid</span><span class="p">))</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">))</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">cowplot</span><span class="p">))</span>
+<span class="n">```</span>
+
+<span class="n">``````r</span>
+<span class="n"># Read data in and seprate State and County in to seperate columns, then edit any problematic entries and then create a new column of FIPS codes, that uniquelly identify a county</span>
+<span class="n">cancer_raw = read.csv(&quot;cancer_reg.csv&quot;)</span>
+<span class="n">cancer_edit = cancer_raw</span>
+<span class="n">cancer_edit &lt;- cancer_edit %&gt;% mutate(Target_div_Income = TARGET_deathRate/medIncome)</span>
+<span class="n">cancer_geo = cbind(cancer_edit, str_match(cancer_edit$Geography,&quot;(.+), (.+)&quot;)[ ,-1])</span>
+<span class="n">colnames(cancer_geo)[37] =&quot;State&quot;</span>
+<span class="n">colnames(cancer_geo)[36] = &quot;County&quot;</span>
+<span class="n">cancer_geo[167,36] &lt;- &quot;Dona Ana County&quot;</span>
+<span class="n">cancer_geo[821,36] &lt;- &quot;La Salle Parish&quot;</span>
+<span class="n">codes &lt;- rep(NULL, length(cancer_geo$County))</span>
+
+<span class="n">for (i in 1:length(cancer_geo$avgAnnCount)){</span>
+<span class="n"> codes[i] = fips(state = cancer_geo$State[i], county = cancer_geo$County[i])</span>
+<span class="n">}</span>
+<span class="n">cancer_final = cbind(cancer_geo, fips = codes)</span>
+<span class="n">```</span>
+
+<span class="n">``````r</span>
+<span class="n">moddat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cancer_final</span>
+
+<span class="p">(</span><span class="nf">colMeans</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">moddat</span><span class="p">)))</span><span class="o">*</span><span class="m">100</span>
+<span class="n">```</span>
+
+<span class="n">```</span><span class="p">{</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">results</span><span class="o">=</span><span class="s">&#39;hide&#39;</span><span class="p">}</span>
+<span class="c1"># Set reproducability seed and then impute data</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="n">trim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">moddat</span><span class="p">[,</span><span class="m">-18</span><span class="p">]</span>
+<span class="n">imp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mice</span><span class="p">(</span><span class="n">trim</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">maxit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">meth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pmm&quot;</span><span class="p">)</span>
+<span class="nf">complete</span><span class="p">(</span><span class="n">imp</span><span class="p">)</span>
+
+<span class="n">```</span>
+
+<span class="n">## Feature Selection</span>
+
+<span class="n">Literature on socioeconomic factors affecting cancer mortality point to poverty, education, and race as some of the most important factors. In the 2017 paper &quot;Socioeconomic and Racial/Ethnic Disparities in Cancer Mortality, Incidence, and Survival in the United States, 1950--2014: Over Six Decades of Changing Patterns and Widening Inequalities,&quot; the authors concluded that individuals in lower income and education groups had significantly higher mortality and incidence rates (Singh and Jemal). The authors also noted that Blacks had higher mortality and incidence rates than other races, likely due to the interconnection of race and income. In the 2021 paper &quot;Leading cancers contributing to educational disparities in cancer mortality in the US, 2017,&quot; the authors concluded that there was a significant difference between the mortality rate between individuals with a bachelors degree and higher, and all education levels below that (Withrow, D. R Et al.). Since both these studies use data exclusively from the U.S., and are within the time frame of interest to us, I decided to use these conclusions to guide my variable selection. Prior visualization of the data set supports these conclusions as well as suggest a categorical variable indicating whether a given county is in the Southwest region. To define which states belong to the Southeast, I used the regions specified by the Bureau of Economic Analysis, who divide the United States into 8 regions (U.S. Bureau of Economic Analysis).![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXd-vzC0MUaV2A_Zng0b9TwdzJTKV2EDgREpOVGWGcv-ftsaCrzbhuiNIBvEvhUViDgMISj8K6wMtNkcL57GOuDRmQDNmpms8RN8hpqWMG33DLVtPASS5-WFWriBGnRtghHSFj8zqpMMvnlA9UiV4tBtQcZI?key=8F5NK8tUA2Iyxb5LkKwFt5wF)</span>
+
+<span class="n">Additionally, the conclusions from the second paper suggest two new variables, PctNoHS18_24 (Percent of county residents ages 18-24 highest education attained: less than high school) and PctHS18_24 (Percent of county residents ages 18-24 highest education attained: high school diploma). While there are several other variables related to educational goals, such as percentage of county residents ages 18-24 who have attained a bachelors, the literature above suggests that residents with lower educational achievements tend to have a higher cancer mortality, while the opposite is not necessarily true. The variables for the initial model were thus povertyPercent (Percent of populace in poverty), PctBlack (Percent of county residents who identify as Black), and PctNoHS18 and PctHS18_24. For future investigation I decided to consider isSouthEast (Categorical variable indicating whether the county is in the South East), as well as the variables related to healthcare coverage, PctPublicCoverage (Percent of county residents with government-provided health coverage) and PctPublicCoverageAlone (Percent of county residents with government-provided health coverage alone), and a more nuanced poverty variable PctUnemployed16_Over (Percent of county residents ages 16 and over unemployed).</span>
+
+<span class="n">``````r</span>
+<span class="n">imputed &lt;- complete(imp)</span>
+<span class="n">imputed_new &lt;- imputed</span>
+<span class="n">```</span>
+
+<span class="n">``````r</span>
+<span class="n">mod1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">imputed_new</span><span class="p">,</span><span class="w"> </span><span class="n">TARGET_deathRate</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">povertyPercent</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">PctBlack</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">PctNoHS18_24</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">PctHS18_24</span><span class="p">)</span>
+<span class="n">```</span>
+
+<span class="n">Here is the summary of the initial model:</span>
+
+<span class="n">``````r</span>
+<span class="n">summary(mod1)</span>
+<span class="n">```</span>
+
+<span class="o">!</span><span class="p">[](</span><span class="n">https</span><span class="o">://</span><span class="n">lh7</span><span class="o">-</span><span class="n">rt.googleusercontent.com</span><span class="o">/</span><span class="n">docsz</span><span class="o">/</span><span class="n">AD_4nXc947QAYT2pIhi</span><span class="m">-4</span><span class="n">kqNRAgD7GBKoFz3wl</span><span class="m">-4227</span><span class="n">adbqF</span><span class="o">-</span><span class="n">PVOWOCFem9l92PouSu1KmzfZMLGMBzF3hHi</span><span class="o">-</span><span class="n">v1TFmKJtJND0I55q1KpZ2hAHXGTA1_sUe3HkQ2nP1t3k_C3E3VhG1doWPqwALwfDiCTOdqCG2c</span><span class="o">?</span><span class="n">key</span><span class="o">=</span><span class="m">8</span><span class="n">F5NK8tUA2Iyxb5LkKwFt5wF</span><span class="p">)</span>
+
+<span class="n">The</span><span class="w"> </span><span class="n">initial</span><span class="w"> </span><span class="n">fit</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">rather</span><span class="w"> </span><span class="n">weak</span><span class="p">,</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">R</span><span class="o">-</span><span class="n">squared</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="m">0.24</span><span class="n">.</span><span class="w"> </span><span class="n">To</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">interest</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">Lasso</span><span class="w"> </span><span class="n">regression</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Lambda</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="n">standard</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="n">away</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">minimum</span><span class="w"> </span><span class="n">residual</span><span class="w"> </span><span class="n">deviance</span><span class="w"> </span><span class="n">Lambda</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">obtained</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">cross</span><span class="o">-</span><span class="n">validation.</span><span class="w"> </span>
+
+<span class="n">``````r</span>
+<span class="c1">#First, code the Southeast variable for future use</span>
+<span class="n">new_england</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Connecticut&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Maine&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Massachusetts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;New Hampshire&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Rhode Island&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Vermont&quot;</span><span class="p">)</span>
+<span class="n">mideast</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Delaware&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;District of Columbia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Maryland&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;New Jersey&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;New York&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pennsylvania&quot;</span><span class="p">)</span>
+<span class="n">great_lakes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Illinois&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Indiana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Michigan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ohio&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Wisconsin&quot;</span><span class="p">)</span>
+<span class="n">plains</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Iowa&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Kansas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Minnesota&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Missouri&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nebraska&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;North Dakota&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;South Dakota&quot;</span><span class="p">)</span>
+<span class="n">southeast</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Alabama&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Arkansas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Florida&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Georgia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Kentucky&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Louisiana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mississippi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;North Carolina&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;South Carolina&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Tennessee&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Virginia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;West Virginia&quot;</span><span class="p">)</span>
+<span class="n">southwest</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Arizona&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;New Mexico&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Oklahoma&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Texas&quot;</span><span class="p">)</span>
+<span class="n">rocky_mountain</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Colorado&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Idaho&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Montana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Utah&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Wyoming&quot;</span><span class="p">)</span>
+<span class="n">far_west</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Alaska&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;California&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hawaii&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nevada&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Oregon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Washington&quot;</span><span class="p">)</span>
+
+<span class="n">get_region</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">new_england</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="s">&quot;New England&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">mideast</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="s">&quot;Mideast&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">great_lakes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="s">&quot;Great Lakes&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">plains</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="s">&quot;Plains&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">southeast</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="s">&quot;Southeast&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">southwest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="s">&quot;Southwest&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">rocky_mountain</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="s">&quot;Rocky Mountain&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">far_west</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="s">&quot;Far West&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="kc">NA</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">imputed_new</span><span class="o">$</span><span class="n">Region</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sapply</span><span class="p">(</span><span class="n">imputed_new</span><span class="o">$</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">get_region</span><span class="p">)</span>
+
+<span class="n">imputed_new</span><span class="o">$</span><span class="n">isSoutheast</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ifelse</span><span class="p">(</span><span class="n">imputed_new</span><span class="o">$</span><span class="n">Region</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Southeast&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Yes&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;No&quot;</span><span class="p">)</span>
+<span class="n">```</span>
+
+<span class="n">Here is the graph of Lambda values, with the minimum Lambda at 0.18, and the 1 SE Lambda value at 1.767:</span>
+
+<span class="n">``````r</span>
+<span class="n">#Create Lasso Lambda graph</span>
+<span class="n">set.seed(1)</span>
+<span class="n">y = imputed_new$TARGET_deathRate</span>
+<span class="n">x = data.matrix(imputed_new[, c(&#39;povertyPercent&#39;, &#39;PctBlack&#39;, &#39;PctHS18_24&#39;,&#39;PctNoHS18_24&#39;, &#39;isSoutheast&#39;,&#39;PctPublicCoverage&#39;,&#39;PctPublicCoverageAlone&#39;, &quot;PctUnemployed16_Over&quot;)])</span>
+<span class="n">cv_model &lt;- cv.glmnet(x, y, alpha = 1)</span>
+<span class="n">plot(cv_model)</span>
+<span class="n">```</span>
+
+<span class="o">!</span><span class="p">[](</span><span class="n">https</span><span class="o">://</span><span class="n">lh7</span><span class="o">-</span><span class="n">rt.googleusercontent.com</span><span class="o">/</span><span class="n">docsz</span><span class="o">/</span><span class="n">AD_4nXdOQBWE9XgEXY5qpoUh2f5T67HxUGEA11Jb6tynOgIlZ3_d9qPJig8YTvnocI</span><span class="o">-</span><span class="n">Oe4JxGRgKy95Up25nEF6sw</span><span class="o">-</span><span class="n">J</span><span class="m">-1</span><span class="n">jNxBBPIjygv40</span><span class="o">-</span><span class="n">l7kiTxZ3T6XYnmCZfdA5OhCLTzQz8qF0EaR</span><span class="o">-</span><span class="n">Eu3_PBzb7lX</span><span class="o">-</span><span class="n">SE0Y</span><span class="o">?</span><span class="n">key</span><span class="o">=</span><span class="m">8</span><span class="n">F5NK8tUA2Iyxb5LkKwFt5wF</span><span class="p">)</span>
+
+<span class="n">``````r</span>
+<span class="c1">#Assign 1se lambda and then run Lasso using it</span>
+<span class="n">min_lambda</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cv_model</span><span class="o">$</span><span class="n">lambda.min</span>
+<span class="n">se_lambda</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cv_model</span><span class="o">$</span><span class="n">lambda.1se</span>
+<span class="n">best_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">glmnet</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">se_lambda</span><span class="p">)</span>
+<span class="nf">coef</span><span class="p">(</span><span class="n">best_model</span><span class="p">)</span>
+<span class="n">```</span>
+
+<span class="n">According to the Lasso results, PctBlack and PctNoHS18_24 were eliminated, while PctPublicCoverage, PctPublicCoverageAlone, and PctUnemployed16_Over were admitted. The fit improved somewhat, with an R-squared of 0.287. Interpreting these results, it appears that for this data set, variables related to healthcare coverage and unemployment are better predictors of cancer mortality than the percentage of black residents as well as the percentage of residents 18-24 that have not graduated high school. I don\&#39;t find this contradictory to prior literature cited that concludes a racial and educational divide in cancer mortality, as not only does Lasso judge on prediction accuracy, but it\&#39;s more likely that these variables are correlated in some way, and the variables related to healthcare coverage and poverty are more comprehensive due to not segregating by education level or race. </span>
+
+<span class="n">## Coefficient Inference</span>
+
+<span class="n">For inference on our coefficient values, I first decided to check normality assumptions using a Q-Q plot before deciding whether or not to conduct inference using a parametric or nonparametric approach. </span>
+
+<span class="n">``````r</span>
+<span class="n">finmod &lt;- lm(data = imputed_new, TARGET_deathRate ~ povertyPercent + PctHS18_24 + isSoutheast + PctPublicCoverage + PctPublicCoverageAlone + PctUnemployed16_Over)</span>
+<span class="n">summary(finmod)</span>
+<span class="n">```</span>
+
+<span class="n">Here</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Q</span><span class="o">-</span><span class="n">Q</span><span class="w"> </span><span class="n">plot</span><span class="o">:</span>
+
+<span class="n">``````r</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">finmod</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="n">```</span>
+
+<span class="n">![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdDvq73CfAnmWp-kz8MCmzQhTA7vMk5C4A_sy2PsKdXfK53Ie56mkQrEVko9SupaZizoWHdqyARhlBbxBfdhKNmHDQPN7TABsjjiQcUMD57Q0AQzZLz2x6gz6MoUD-5FOOQkEN9Ho0qN3BzZB4Xh6boQOFZ?key=8F5NK8tUA2Iyxb5LkKwFt5wF)</span>
+
+<span class="n">While the line appears to fit well towards the center of the plot, the line veers off heavily towards the ends. For greater inference, I decided to use a Shapiro-Wilk hypothesis test on the residual values to test for normality, resulting in a p-value coming out to \&lt;2e-16, thus rejecting the null hypothesis that our fitted results are normal.</span>
+
+<span class="n">``````r</span>
+<span class="n">shapiro.test(finmod$residuals)</span>
+<span class="n">```</span>
+
+<span class="n">For</span><span class="w"> </span><span class="n">inference</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">thus</span><span class="w"> </span><span class="n">chose</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Bootstrap</span><span class="w"> </span><span class="n">algorithm</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">understand</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sampling</span><span class="w"> </span><span class="n">distribution</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">our</span><span class="w"> </span><span class="n">coefficients</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">develop</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">confidence</span><span class="w"> </span><span class="n">interval</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">interpretation</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">our</span><span class="w"> </span><span class="n">final</span><span class="w"> </span><span class="n">model.</span><span class="w"> </span><span class="n">Additionally</span><span class="p">,</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">percentile</span><span class="w"> </span><span class="n">confidence</span><span class="w"> </span><span class="n">interval</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="n">sampling</span><span class="w"> </span><span class="n">distributions</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">tested</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">null</span><span class="w"> </span><span class="n">hypothesis</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">variable</span><span class="s">&#39;s value is actually 0. Since I would thus be performing 6 hypothesis tests, I applied a Bonferroni correction to my significance level of 0.05, thus making the confidence interval from the 0.004166667 quantile to the 0.9958333 quantile. Note that applying this Bonferroni correction results in a significantly larger confidence interval than if not applied, as the original confidence interval would thus be from the 0.025 quantile to the 0.975 quantile. </span>
+
+<span class="s">Here is a figure of all the bootstrapped sampling distributions (10000 replications), along with the confidence intervals and original coefficient estimates marked on the graph:</span>
+
+<span class="s">``````r</span>
+
+<span class="s">nboot &lt;- 10000</span>
+<span class="s">set.seed(1)</span>
+
+<span class="s"># Create a function to calculate the coefficients using the bootstrap</span>
+<span class="s">coef.boot &lt;- function(data, indices) {</span>
+<span class="s">  model &lt;- lm(TARGET_deathRate ~ povertyPercent + PctHS18_24 + isSoutheast + PctPublicCoverage + PctPublicCoverageAlone + PctUnemployed16_Over, data = data[indices, ])</span>
+<span class="s">  return(coef(model)[-1]) # exclude intercept column</span>
+<span class="s">}</span>
+
+<span class="s"># Perform the bootstrap using the defined function</span>
+<span class="s">boot.results &lt;- boot(data = imputed_new, statistic = coef.boot, R = nboot)</span>
+
+<span class="s"># Convert bootstrap results to a data frame</span>
+<span class="s">boot.df &lt;- as.data.frame(boot.results$t)</span>
+<span class="s">colnames(boot.df) &lt;- c(&quot;povertyPercent&quot;, &quot;PctHS18_24&quot;, &quot;isSoutheastYes&quot;,&quot;PctPublicCoverage&quot;, &quot;PctPublicCoverageAlone&quot;, &quot;PctUnemployed16_Over&quot;)</span>
+
+<span class="s"># Get coefficient estimates from original model</span>
+<span class="s">finmod &lt;- lm(TARGET_deathRate ~ povertyPercent + PctHS18_24 + isSoutheast + PctPublicCoverage + PctPublicCoverageAlone + PctUnemployed16_Over, data = imputed_new)</span>
+<span class="s">coef.estimates &lt;- coef(finmod)[-1 , drop = TRUE]</span>
+
+<span class="s"># Create a function to plot histograms with quantile and coefficient lines and a title</span>
+<span class="s">plot.hist &lt;- function(x, coef.est, varname) {</span>
+<span class="s">  p &lt;- ggplot(data.frame(x), aes(x = x)) + </span>
+<span class="s">    geom_histogram(binwidth = 0.05, color = &quot;black&quot;, fill = &quot;white&quot;) +</span>
+<span class="s">    geom_vline(xintercept = quantile(x, probs = c(0.004166667, 0.9958333)), linetype = &quot;dashed&quot;) +</span>
+<span class="s">    geom_vline(xintercept = coef.est, color = &quot;red&quot;, linetype = &quot;dashed&quot;) +</span>
+<span class="s">    xlab(&quot;&quot;) + ylab(&quot;Frequency&quot;) +</span>
+<span class="s">    ggtitle(varname)+</span>
+<span class="s">    theme(plot.title = element_text(size = 9.5))</span>
+<span class="s">  return(p)</span>
+<span class="s">}</span>
+
+<span class="s"># Create a list of plots for each column in boot.df with titles</span>
+<span class="s">plot.list &lt;- mapply(plot.hist, x = boot.df, coef.est = coef.estimates, varname = names(boot.df), SIMPLIFY = FALSE)</span>
+
+<span class="s"># Combine the plots into a single figure with a title</span>
+<span class="s">grid.arrange(grobs = plot.list, ncol = 3, top = textGrob(&#39;</span><span class="n">Histograms</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Coefficient</span><span class="w"> </span><span class="n">Estimates</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="m">95</span><span class="o">% Confidence Intervals \n using a Bonferroni Correction for 6 Tests&#39;, gp=gpar(fontsize=13, fontface = 2))</span>
+<span class="o">)</span>
+
+<span class="o">```</span>
+
+<span class="o">![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXesgjkg5YmR9hblvY6nPH3WiPoB_xTeId4qVjdemtWMPQyiP47T9isG2gYBRkpKAC8sdPnNtcx_oRm13-KdW30H268oZ751IJKg9AyhPgLK8ARpvL6ypAvmJoUOcO2Hg1fc8q2r7NbrAD-E_k1dF3Olj6hF?key=8F5NK8tUA2Iyxb5LkKwFt5wF)</span>
+
+<span class="o">From initial inspection, it\&#39;s clear that povertyPercent, PctHS18_24, and isSoutheastYes all reject the null hypothesis that the respective coefficient effect is actually 0. Upon inspecting PctUnemployed16_Over\&#39;s bottom quantile, (0.01195514), it appears this variable as well rejects the null hypothesis that the respective coefficient effect is actually 0. PctPublicCoverage and PctPublicCoverageAlone both fail to reject the hypothesis that the coefficient effect is actually 0. Based on these inference results, each of the variables with a confidence interval that doesn\&#39;t include 0 does have some effect on cancer mortality, while we cannot for certain say the same for PctPublicCoverage and PctPublicCoverageAlone, whose confidence interval does contain 0. These conclusions of course are contingent on confidence level selected (0.05 with a Bonferroni Correction), the randomness of the Bootstrap (10000 replications), as well as the randomness of the imputation process. </span>
+
+<span class="o">Before variable interpretation, I investigated the assumption of MAR (Missing at Random), using the same bootstrap procedure discussed previously. If indeed the data imputed is MAR, the reduced data set bootstrap sampling distribution should look similar, or hopefully the same as the imputed data set bootstrap sampling distributions. Since only one of the variables with NA values was used in the final model, PctPrivateCoverageAlone, I only removed rows that have an NA in this variable, instead of all rows with an NA. Comparing the reduced data set to the imputed data set, the reduced data set lost 609 observations. I then ran the same bootstrap procedure as before, and then overlap the sampling distributions for each data set:</span>
+
+<span class="o">``````r</span>
+<span class="o"># Create reduced data set and apply the Southeast column used previously</span>
+<span class="o">reduced &lt;- na.omit(trim[,-21])</span>
+<span class="o">nrow(reduced) - nrow(imputed_new)</span>
+
+<span class="o">reduced$Region &lt;- sapply(reduced$State, get_region)</span>
+
+<span class="o">reduced$isSoutheast &lt;- ifelse(reduced$Region == &quot;Southeast&quot;, &quot;Yes&quot;, &quot;No&quot;)</span>
+<span class="o">```</span>
+
+<span class="o">``````r</span>
+<span class="o">set.seed(1)</span>
+<span class="o">##DO NOT INCLUDE IN FINAL</span>
+<span class="o">nboot &lt;- 10000</span>
+
+<span class="o"># Create a function to calculate the coefficients using the bootstrap</span>
+<span class="o">coef.boot &lt;- function(data, indices) {</span>
+<span class="o">  model &lt;- lm(TARGET_deathRate ~ povertyPercent + PctHS18_24 + isSoutheast + PctPublicCoverage + PctPublicCoverageAlone + PctUnemployed16_Over, data = data[indices, ])</span>
+<span class="o">  return(coef(model)[-1]) # exclude intercept column</span>
+<span class="o">}</span>
+
+<span class="o"># Perform the bootstrap using the defined function</span>
+<span class="o">boot.results.reduce &lt;- boot(data = reduced, statistic = coef.boot, R = nboot)</span>
+
+<span class="o"># Convert bootstrap results to a data frame</span>
+<span class="o">boot.df.reduce &lt;- as.data.frame(boot.results.reduce$t)</span>
+<span class="o">colnames(boot.df.reduce) &lt;- c(&quot;povertyPercent&quot;, &quot;PctHS18_24&quot;, &quot;isSoutheastYes&quot;,&quot;PctPublicCoverage&quot;, &quot;PctPublicCoverageAlone&quot;, &quot;PctUnemployed16_Over&quot;)</span>
+
+<span class="o"># Get coefficient estimates from original model</span>
+<span class="o">finmod.reduce &lt;- lm(TARGET_deathRate ~ povertyPercent + PctHS18_24 + isSoutheast + PctPublicCoverage + PctPublicCoverageAlone + PctUnemployed16_Over, data = reduced)</span>
+<span class="o">coef.estimates.reduce &lt;- coef(finmod.reduce)[-1 , drop = TRUE]</span>
+
+<span class="o"># Create a function to plot histograms with quantile and coefficient lines and a title</span>
+<span class="o">plot.hist &lt;- function(x, coef.est, varname) {</span>
+<span class="o">  p &lt;- ggplot(data.frame(x), aes(x = x)) + </span>
+<span class="o">    geom_histogram(binwidth = 0.05, color = &quot;black&quot;, fill = &quot;white&quot;) +</span>
+<span class="o">    geom_vline(xintercept = quantile(x, probs = c(0.004166667, 0.9958333)), linetype = &quot;dashed&quot;) +</span>
+<span class="o">    geom_vline(xintercept = coef.est, color = &quot;red&quot;, linetype = &quot;dashed&quot;) +</span>
+<span class="o">    xlab(&quot;&quot;) + ylab(&quot;Frequency&quot;) +</span>
+<span class="o">    ggtitle(varname)+</span>
+<span class="o">    theme(plot.title = element_text(size = 9.5))</span>
+<span class="o">  return(p)</span>
+<span class="o">}</span>
+
+<span class="o"># Create a list of plots for each column in boot.df with titles</span>
+<span class="o">plot.list &lt;- mapply(plot.hist, x = boot.df.reduce, coef.est = coef.estimates.reduce, varname = names(boot.df.reduce), SIMPLIFY = FALSE)</span>
+
+<span class="o"># Combine the plots into a single figure with a title</span>
+<span class="o">grid.arrange(grobs = plot.list, ncol = 3, top = textGrob(&#39;Reduced Data Histograms of Coefficient Estimates with 95%</span><span class="w"> </span><span class="n">Confidence</span><span class="w"> </span><span class="n">Intervals</span><span class="s">&#39;, gp=gpar(fontsize=13, fontface = 2))</span>
+<span class="s">)</span>
+
+<span class="s">```</span>
+
+<span class="s">``````r</span>
+<span class="s"># Combine the two bootstrapped data frames</span>
+<span class="s">boot.df_combined &lt;- bind_rows(</span>
+<span class="s">  boot.df %&gt;% mutate(group = &quot;Original&quot;),</span>
+<span class="s">  boot.df.reduce %&gt;% mutate(group = &quot;Reduced&quot;)</span>
+<span class="s">)</span>
+
+<span class="s">idx = 1:nrow(boot.df_combined)</span>
+
+<span class="s"># Create a function to plot histograms with quantile and coefficient lines and a title</span>
+<span class="s">plot.hist &lt;- function(x, coef.est, coef.est.reduce, varname) {</span>
+<span class="s">  group &lt;- ifelse(idx &lt;= nrow(boot.df), &quot;Original&quot;, &quot;Reduced&quot;)</span>
+<span class="s">  p &lt;- ggplot(data.frame(x, group = group), aes(x = x)) + </span>
+<span class="s">    geom_histogram(binwidth = 0.05, alpha = 0.6, aes(fill = group), position = &quot;identity&quot;) +</span>
+<span class="s">    geom_vline(xintercept = coef.est, color = &quot;red&quot;, linetype = &quot;dashed&quot;) +</span>
+<span class="s">    geom_vline(xintercept = coef.est.reduce, color = &quot;blue&quot;, linetype = &quot;dashed&quot;) +</span>
+<span class="s">    xlab(&quot;&quot;) + ylab(&quot;Frequency&quot;) +</span>
+<span class="s">    ggtitle(varname) +</span>
+<span class="s">    theme(plot.title = element_text(size = 9.5)) +</span>
+<span class="s">    scale_fill_manual(values = c(&quot;Original&quot; = &quot;red&quot;, &quot;Reduced&quot; = &quot;blue&quot;)) + theme(legend.position = &quot;none&quot;)</span>
+<span class="s">  return(p)</span>
+<span class="s">}</span>
+
+<span class="s"># Create a list of plots for each column in boot.df with titles</span>
+<span class="s">plot.list &lt;- mapply(plot.hist, x = boot.df_combined[,-7], coef.est = coef.estimates, coef.est.reduce = coef.estimates.reduce, varname = names(boot.df_combined)[-7], SIMPLIFY = FALSE)</span>
+
+<span class="s">grid.arrange(grobs = plot.list, ncol = 3, top = textGrob(&#39;</span><span class="n">Overlayed</span><span class="w"> </span><span class="n">Histograms</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Coefficient</span><span class="w"> </span><span class="n">Estimates</span><span class="p">,</span><span class="w"> </span>\<span class="n">nBlue</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">reduced</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Red</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">imputed</span><span class="w"> </span><span class="n">data</span><span class="s">&#39;, gp=gpar(fontsize=13, fontface = 2)))</span>
+<span class="s">```</span>
+
+<span class="s">![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXd_Z4Zw_k5aP4ho8QVZ3sce_Oi06Jexxb5bhjJ9lcHeI2SajdRw9ncCPtHZLhwd5gDKfhlGqM1k7-640Y__v_lWQGdGu4Rt5H_XGqKCwUnq0TBAbO91ck5eEhRd2LKPIqr1wDu-dNXnr1CsZhYg70nKtyLJ?key=8F5NK8tUA2Iyxb5LkKwFt5wF)</span>
+
+<span class="s">As seen in the graphs, the reduced data set bootstrap distributions are extremely similar to the imputed data set bootstrap distributions, helping confirm the assumption that the data is MAR (Missing at Random) and not biasing the estimates. Additionally, the coefficient estimates for the reduced and imputed data sets are almost the same, deviating less than 0.2 for every variable. </span>
+
+<span class="s">## Variable Interpretation/Conclusion</span>
+
+<span class="s">Here is the summary of my final model after variable selection:</span>
+
+<span class="s">``````r</span>
+<span class="s">summary(finmod)</span>
+<span class="s">```</span>
+
+<span class="s">![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfghNRgPrlBi-tdD457hyRiYHueR0t_yvRjGV_XrP7V-oTMbeOl301ynP_7nVAb2qS3lhRgveJFpfadE8JHrY0hR4qVVRbBB8LhNO_LFL57d3R2CavlgoleGgMwOE6IEAlmKN0LUUrXU6ZSq9DdN0PWyAw?key=8F5NK8tUA2Iyxb5LkKwFt5wF)</span>
+
+<span class="s">``````r</span>
+<span class="s">quantile(boot.df$povertyPercent, probs = c(0.004166667, 0.9958333))</span>
+<span class="s">quantile(boot.df$PctHS18_24, probs = c(0.004166667, 0.9958333))</span>
+<span class="s">quantile(boot.df$isSoutheastYes, probs = c(0.004166667, 0.9958333))</span>
+<span class="s">quantile(boot.df$PctPublicCoverage, probs = c(0.004166667, 0.9958333))</span>
+<span class="s">quantile(boot.df$PctPublicCoverageAlone, probs = c(0.004166667, 0.9958333))</span>
+<span class="s">quantile(boot.df$PctUnemployed16_Over, probs = c(0.004166667, 0.9958333))</span>
+<span class="s">```</span>
+
+<span class="s">Based on the results of my modeling using Lasso regression and Bootstrap inference, I came to the following conclusions to my research question. For every percent increase of a county&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">population</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">poverty</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">average</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">cancer</span><span class="w"> </span><span class="n">mortality</span><span class="w"> </span><span class="n">per</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="m">000</span><span class="w"> </span><span class="n">residents</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">county</span><span class="w"> </span><span class="n">increases</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">approximately</span><span class="w"> </span><span class="m">0.563</span><span class="w"> </span><span class="nf">individuals </span><span class="p">(</span><span class="n">CI</span><span class="o">:</span><span class="w"> </span><span class="m">0.2000-0.9467</span><span class="p">)</span><span class="n">.</span><span class="w"> </span><span class="n">For</span><span class="w"> </span><span class="n">every</span><span class="w"> </span><span class="n">percent</span><span class="w"> </span><span class="n">increase</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">county</span><span class="w"> </span><span class="n">residents</span><span class="w"> </span><span class="n">ages</span><span class="w"> </span><span class="m">18-24</span><span class="w"> </span><span class="n">who</span>\<span class="s">&#39;</span><span class="err">s highest education attained is a high school diploma, on average the cancer mortality per 100,000 residents increases by 0.4931 (CI: 0.3419-0.6497). Compared to other regions of the United States, Southeast countries have on average 11.66 (CI: 8.642-14.6664) more cancer deaths per 100,000 residents. For every percent increase of county residents with government-provided health coverage, on average the cancer mortality per 100,000 residents in a county increases by approximately 0.2811 individuals (CI: -0.06139</span>
+
+<span class="m">-0.6253</span><span class="p">)</span><span class="n">.</span><span class="w"> </span><span class="n">For</span><span class="w"> </span><span class="n">every</span><span class="w"> </span><span class="n">percent</span><span class="w"> </span><span class="n">increase</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">county</span><span class="w"> </span><span class="n">residents</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">government</span><span class="o">-</span><span class="n">provided</span><span class="w"> </span><span class="n">health</span><span class="w"> </span><span class="n">coverage</span><span class="w"> </span><span class="n">alone</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">average</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">cancer</span><span class="w"> </span><span class="n">mortality</span><span class="w"> </span><span class="n">per</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="m">000</span><span class="w"> </span><span class="n">residents</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">county</span><span class="w"> </span><span class="n">increases</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">approximately</span><span class="w"> </span><span class="m">0.5704</span><span class="w"> </span><span class="nf">individuals </span><span class="p">(</span><span class="n">CI</span><span class="o">:</span><span class="w"> </span><span class="m">-0.00614-1.1627</span><span class="p">)</span><span class="n">.</span><span class="w"> </span><span class="n">Finally</span><span class="p">,</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">every</span><span class="w"> </span><span class="n">percent</span><span class="w"> </span><span class="n">increase</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">county</span><span class="w"> </span><span class="n">residents</span><span class="w"> </span><span class="n">ages</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="n">unemployed</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">average</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">cancer</span><span class="w"> </span><span class="n">mortality</span><span class="w"> </span><span class="n">per</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="m">000</span><span class="w"> </span><span class="n">residents</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">county</span><span class="w"> </span><span class="n">increases</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">approximately</span><span class="w"> </span><span class="m">0.563</span><span class="w"> </span><span class="nf">individuals </span><span class="p">(</span><span class="n">CI</span><span class="o">:</span><span class="w"> </span><span class="m">0.0119-1.1144</span><span class="p">)</span><span class="n">.</span>
+
+<span class="w">	</span><span class="n">From</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="n">conclusions</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">most</span><span class="w"> </span><span class="n">important</span><span class="w"> </span><span class="n">finding</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">counties</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Southeast</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">United</span><span class="w"> </span><span class="n">States</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">significantly</span><span class="w"> </span><span class="n">higher</span><span class="w"> </span><span class="n">cancer</span><span class="w"> </span><span class="n">mortality</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">regions</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">United</span><span class="w"> </span><span class="n">States.</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">important</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="n">conclusions</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">limitations</span><span class="p">,</span><span class="w"> </span><span class="n">including</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">fact</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">ends</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="m">2016</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">includes</span><span class="w"> </span><span class="n">deaths</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">lung</span><span class="w"> </span><span class="n">cancer</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">modeling</span><span class="w"> </span><span class="n">assumes</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">excessive</span><span class="w"> </span><span class="n">collinearity</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">utilizes</span><span class="w"> </span><span class="n">techniques</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">Lasso</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Bootstrapping</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">aspect</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">randomness.</span><span class="w"> </span><span class="n">Regardless</span><span class="p">,</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="n">conclusions</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">would</span><span class="w"> </span><span class="n">suggest</span><span class="w"> </span><span class="n">further</span><span class="w"> </span><span class="n">research</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">specifically</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Southeast</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">United</span><span class="w"> </span><span class="n">States</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">better</span><span class="w"> </span><span class="n">understand</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">specific</span><span class="w"> </span><span class="n">causes</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">higher</span><span class="w"> </span><span class="n">mortality</span><span class="w"> </span><span class="n">rates.</span><span class="w"> </span><span class="n">Additionally</span><span class="p">,</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">results</span><span class="p">,</span><span class="w"> </span><span class="n">education</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">poverty</span><span class="w"> </span><span class="n">were</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">significant</span><span class="w"> </span><span class="n">predictors</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">cancer</span><span class="w"> </span><span class="n">mortality</span><span class="p">,</span><span class="w"> </span><span class="n">suggesting</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">few</span><span class="w"> </span><span class="n">areas</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">focus</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="n">research</span><span class="w"> </span><span class="n">on.</span><span class="w"> </span><span class="n">Overall</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">highlight</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">federal</span><span class="w"> </span><span class="n">action</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">aid</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="n">Southeast</span><span class="w"> </span><span class="n">communities</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">turn</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">reduce</span><span class="w"> </span><span class="n">cancer</span><span class="w"> </span><span class="n">mortality</span><span class="w"> </span><span class="n">overall</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">United</span><span class="w"> </span><span class="n">States.</span>
+
+<span class="c1">## Data Citation</span>
+
+<span class="n">N.Rippner.</span><span class="w"> </span><span class="n">Cancer</span><span class="w"> </span><span class="n">Trials</span><span class="p">,</span><span class="w"> </span><span class="m">2017</span><span class="n">.</span><span class="w"> </span><span class="n">Retrieved</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">http</span><span class="o">://</span><span class="n">data.world</span><span class="o">/</span><span class="n">exercises</span><span class="o">/</span>
+
+<span class="n">linear</span><span class="o">-</span><span class="n">regression</span><span class="o">-</span><span class="n">exercise</span><span class="m">-1</span><span class="o">/</span><span class="n">workspace</span><span class="o">/</span><span class="n">file</span><span class="o">?</span><span class="n">filename</span><span class="o">=</span><span class="n">cancer_reg.csv.</span>
+
+\
+
+<span class="c1">## Sources Cited</span>
+
+<span class="n">Singh</span><span class="p">,</span><span class="w"> </span><span class="n">G.</span><span class="w"> </span><span class="n">K.</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Jemal</span><span class="p">,</span><span class="w"> </span><span class="nf">A. </span><span class="p">(</span><span class="m">2017</span><span class="p">)</span><span class="n">.</span><span class="w"> </span><span class="n">Socioeconomic</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">Racial</span><span class="o">/</span><span class="n">Ethnic</span><span class="w"> </span><span class="n">Disparities</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">Cancer</span><span class="w"> </span><span class="n">Mortality</span><span class="p">,</span><span class="w"> </span><span class="n">Incidence</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">Survival</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">United</span><span class="w"> </span><span class="n">States</span><span class="p">,</span><span class="w"> </span><span class="m">1950-2014</span><span class="o">:</span><span class="w"> </span><span class="n">Over</span><span class="w"> </span><span class="n">Six</span><span class="w"> </span><span class="n">Decades</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Changing</span><span class="w"> </span><span class="n">Patterns</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">Widening</span><span class="w"> </span><span class="n">Inequalities.</span><span class="w"> </span><span class="n">Journal</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">environmental</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="n">health</span><span class="p">,</span><span class="w"> </span><span class="m">2017</span><span class="p">,</span><span class="w"> </span><span class="m">2819372</span><span class="n">.</span><span class="w"> </span><span class="o">&lt;</span><span class="n">https</span><span class="o">://</span><span class="n">doi.org</span><span class="o">/</span><span class="m">10.1155</span><span class="o">/</span><span class="m">2017</span><span class="o">/</span><span class="m">2819372</span><span class="o">&gt;</span>
+
+<span class="n">U.S.</span><span class="w"> </span><span class="n">Bureau</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Economic</span><span class="w"> </span><span class="nf">Analysis. </span><span class="p">(</span><span class="n">n.d.</span><span class="p">)</span><span class="n">.</span><span class="w"> </span><span class="n">Regional</span><span class="w"> </span><span class="n">economic</span><span class="w"> </span><span class="n">accounts.</span><span class="w"> </span><span class="n">Iowa</span><span class="w"> </span><span class="n">State</span><span class="w"> </span><span class="n">University.</span><span class="p">[</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">www.icip.iastate.edu</span><span class="o">/</span><span class="n">maps</span><span class="o">/</span><span class="n">refmaps</span><span class="o">/</span><span class="n">bea</span><span class="p">](</span><span class="n">https</span><span class="o">://</span><span class="n">www.icip.iastate.edu</span><span class="o">/</span><span class="n">maps</span><span class="o">/</span><span class="n">refmaps</span><span class="o">/</span><span class="n">bea</span><span class="p">)</span>
+
+<span class="n">Withrow</span><span class="p">,</span><span class="w"> </span><span class="n">D.</span><span class="w"> </span><span class="n">R.</span><span class="p">,</span><span class="w"> </span><span class="n">Freedman</span><span class="p">,</span><span class="w"> </span><span class="n">N.</span><span class="w"> </span><span class="n">D.</span><span class="p">,</span><span class="w"> </span><span class="n">Gibson</span><span class="p">,</span><span class="w"> </span><span class="n">J.</span><span class="w"> </span><span class="bp">T</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">Yu</span><span class="p">,</span><span class="w"> </span><span class="n">M.</span><span class="p">,</span><span class="w"> </span><span class="n">Nápoles</span><span class="p">,</span><span class="w"> </span><span class="n">A.</span><span class="w"> </span><span class="n">M.</span><span class="p">,</span><span class="w"> </span><span class="n">Berrington</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">González</span><span class="p">,</span><span class="w"> </span><span class="n">A.</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Shiels</span><span class="p">,</span><span class="w"> </span><span class="n">M.</span><span class="w"> </span><span class="nf">S. </span><span class="p">(</span><span class="m">2021</span><span class="p">)</span><span class="n">.</span><span class="w"> </span><span class="n">Leading</span><span class="w"> </span><span class="n">cancers</span><span class="w"> </span><span class="n">contributing</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">educational</span><span class="w"> </span><span class="n">disparities</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">cancer</span><span class="w"> </span><span class="n">mortality</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">US</span><span class="p">,</span><span class="w"> </span><span class="m">2017</span><span class="n">.</span><span class="w"> </span><span class="n">Cancer</span><span class="w"> </span><span class="n">causes</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">control</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CCC</span><span class="p">,</span><span class="w"> </span><span class="m">32</span><span class="p">(</span><span class="m">11</span><span class="p">),</span><span class="w"> </span><span class="m">1193</span><span class="o">-</span><span class="m">-1196</span><span class="n">.</span><span class="w"> </span><span class="o">&lt;</span><span class="n">https</span><span class="o">://</span><span class="n">doi.org</span><span class="o">/</span><span class="m">10.1007</span><span class="o">/</span><span class="n">s10552</span><span class="m">-021-01471-9</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to the Quarto Project documentation!</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-tool-motivations">Modeling Tool Motivations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-tool-assumptions">Modeling Tool Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data Preprocessing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By User
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
