@@ -5,3 +5,4 @@ The qmd (Quarto document) used to generate all visuals as well as perform the an
 The raw R script is in __LinearModelingRCode.R__ <br>
 The output of the code, written to a pdf, is in __LinearModelingCodeOutput.pdf__ <br>
 An EDA visualization I created for the project is located in __LinearModelingEDA.png__  <br>
+The website going step-by-step through all the code in this project can be found at **https://brandonorodriguez.github.io/Unraveling-Socioeconomic-Factors-in-U.S.-Cancer-Incidence-A-Linear-Modeling-Approach**
