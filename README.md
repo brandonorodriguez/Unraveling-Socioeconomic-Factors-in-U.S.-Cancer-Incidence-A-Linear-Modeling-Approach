@@ -1,5 +1,5 @@
 # Unraveling Socioeconomic Factors in the U.S. Cancer Incidence : A Linear Modeling Approach
-brandonorodriguez.github.io/Unraveling-Socioeconomic-Factors-in-U.S.-Cancer-Incidence-A-Linear-Modeling-Approach/ <br>
+The website for this project hosting the code, output, and text is located at [brandonorodriguez.github.io/Unraveling-Socioeconomic-Factors-in-U.S.-Cancer-Incidence-A-Linear-Modeling-Approach/](https://brandonorodriguez.github.io/Unraveling-Socioeconomic-Factors-in-U.S.-Cancer-Incidence-A-Linear-Modeling-Approach/)  <br>
 I created this project during my time at Berkeley under the supervision of __Professor Aiden McLoughlin__ <br>
 The data citation and full formal report is in __LinearModelingReport.pdf__ <br>
 The qmd (Quarto document) used to generate all visuals as well as perform the analysis is in __LinearModelingCode.qmd__ <br>
